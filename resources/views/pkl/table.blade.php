@@ -11,7 +11,8 @@
     </thead>
     <tbody>
         @forelse($pkls as $pkl)
-            <tr>
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr class="{{ $loop->odd ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700' }}">
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $pkl->siswa->nama ?? '-' }}</td>
                 <td>{{ $pkl->guru->nama ?? '-' }}</td>
@@ -19,6 +20,7 @@
                 <td>{{ \Carbon\Carbon::parse($pkl->mulai)->locale('id')->translatedFormat('d F Y') }}</td>
                 <td>{{ \Carbon\Carbon::parse($pkl->selesai)->locale('id')->translatedFormat('d F Y') }}</td>
             </tr>
+            </tbody>
         @empty
             <tr>
                 <td colspan="6" class="text-center py-4">Tidak ada data yang ditemukan.</td>
