@@ -32,12 +32,12 @@
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                 @foreach($industris as $industri)
                     <tr class="{{ $loop->odd ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700' }}">
-                    <td class="px-4 py-2">{{ $loop->iteration }}</td>
-                    <td class="px-4 py-2">{{ $industri->nama }}</td>
-                    <td class="px-4 py-2">{{ $industri->bidang_usaha }}</td>
-                    <td class="px-4 py-2">{{ $industri->alamat }}</td>
-                    <td class="px-4 py-2">{{ $industri->kontak }}</td>
-                    <td class="px-4 py-2">{{ $industri->email }}</td>
+                    <td class="py-2">{{ $loop->iteration }}</td>
+                    <td class="py-2">{{ $industri->nama }}</td>
+                    <td class="py-2">{{ $industri->bidang_usaha }}</td>
+                    <td class="py-2">{{ $industri->alamat }}</td>
+                    <td class="py-2">{{ $industri->kontak }}</td>
+                    <td class="py-2">{{ $industri->email }}</td>
                     </tr>
                 @endforeach
             </tbody>
