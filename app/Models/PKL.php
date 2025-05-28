@@ -31,7 +31,7 @@ class PKL extends Model
             if ($pkl->siswa) {
                 $pkl->siswa->update(['status_pkl' => 'Belum']);
             } 
-        })
+        });
     }
 
     public function siswa(): BelongsTo
