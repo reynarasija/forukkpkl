@@ -29,7 +29,7 @@ class PKL extends Model
 
         static::deleted(function ($pkl){
             if ($pkl->siswa) {
-                $pkl->siswa->update(['status_pkl' => 'Belum']);
+                $pkl->siswa->update(['status_pkl' => 'belum']);
             } 
         });
     }

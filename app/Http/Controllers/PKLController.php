@@ -118,7 +118,7 @@ class PKLController extends Controller
 
         // Update siswa status back to 'Belum' when PKL is deleted
         if ($pkl->siswa) {
-            $pkl->siswa->update(['status_pkl' => 'Belum']);
+            $pkl->siswa->update(['status_pkl' => 'belum']);
         }
 
         $pkl->delete();

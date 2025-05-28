@@ -49,10 +49,10 @@ class SiswaResource extends Resource
 
             Select::make('status_pkl')
                 ->options([
-                    'Belum' => 'Belum',
-                    'Sudah' => 'Sudah',
+                    'belum' => 'Belum',
+                    'sudah' => 'Sudah',
                 ])
-                ->default('Belum'),
+                ->default('belum'),
         ]);
     }
 
