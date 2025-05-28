@@ -1,37 +1,46 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Validation\Rules;
-use Illuminate\View\View;
-use Spatie\Permission\Models\Role; // Add at top if needed
+use Spatie\Permission\Models\Role; // Make sure this is at the top
 
-public function store(Request $request): RedirectResponse
+class RegisteredUserController extends Controller
 {
-    $request->validate([
-        'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-        'password' => ['required', 'confirmed', Rules\Password::defaults()],
-    ]);
+    /**
+     * Display the registration view.
+     */
+    public function create(): View
+    {
+        return view('auth.register');
+    }
 
-    $user = User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password),
-    ]);
+    /**
+     * Handle an incoming registration request.
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
 
-    // ✅ Assign "Siswa" role
-    $user->assignRole('Siswa');
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-    event(new Registered($user));
-    Auth::login($user);
+        // Assign "Siswa" role using Spatie
+        $user->assignRole('Siswa');
 
-    return redirect(route('dashboard', absolute: false));
+        event(new Registered($user));
+        Auth::login($user);
+
+        return redirect(route('dashboard', absolute: false));
+    }
 }
