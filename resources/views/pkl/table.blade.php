@@ -13,12 +13,12 @@
         @forelse($pkls as $pkl)
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
             <tr class="{{ $loop->odd ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700' }}">
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $pkl->siswa->nama ?? '-' }}</td>
-                <td>{{ $pkl->guru->nama ?? '-' }}</td>
-                <td>{{ $pkl->industri->nama ?? '-' }}</td>
-                <td>{{ \Carbon\Carbon::parse($pkl->mulai)->locale('id')->translatedFormat('d F Y') }}</td>
-                <td>{{ \Carbon\Carbon::parse($pkl->selesai)->locale('id')->translatedFormat('d F Y') }}</td>
+                <td class="px-4 py-2">{{ $loop->iteration }}</td>
+                <td class="px-4 py-2">{{ $pkl->siswa->nama ?? '-' }}</td>
+                <td class="px-4 py-2">{{ $pkl->guru->nama ?? '-' }}</td>
+                <td class="px-4 py-2">{{ $pkl->industri->nama ?? '-' }}</td>
+                <td class="px-4 py-2">{{ \Carbon\Carbon::parse($pkl->mulai)->locale('id')->translatedFormat('d F Y') }}</td>
+                <td class="px-4 py-2">{{ \Carbon\Carbon::parse($pkl->selesai)->locale('id')->translatedFormat('d F Y') }}</td>
             </tr>
             </tbody>
         @empty
