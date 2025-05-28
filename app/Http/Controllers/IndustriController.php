@@ -9,7 +9,7 @@ class IndustriController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $query = Industri::with(['industri']);
 
@@ -19,11 +19,8 @@ class IndustriController extends Controller
             });
         }
 
-        $pkls = $query->latest()->paginate(5);
+        $industris = $query->latest()->paginate(5);
 
-        return view('pkl.index', compact('pkls'));
-
-        $industris = Industri::latest()->get();
         return view('industri.index', compact('industris'));
     }
 
