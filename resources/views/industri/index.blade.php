@@ -21,12 +21,12 @@
                 <table class="w-full text-lg text-left rtl:text-right text-gray-500 dark:text-gray-300">
                     <thead class="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th>No.</th>
-                        <th>Nama Perusahaan</th>
-                        <th>Bidang Usaha</th>
-                        <th>Alamat</th>
-                        <th>Kontak</th>
-                        <th>Email</th>
+                        <th class="text-center align-middle">No.</th>
+                        <th class="text-center align-middle">Nama Perusahaan</th>
+                        <th class="text-center align-middle">Bidang Usaha</th>
+                        <th class="text-center align-middle">Alamat</th>
+                        <th class="text-center align-middle">Kontak</th>
+                        <th class="text-center align-middle">Email</th>
                     </tr>
                 </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">

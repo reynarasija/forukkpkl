@@ -1,12 +1,12 @@
 <table class="w-full text-lg text-left text-gray-500 dark:text-gray-300">
     <thead class="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-            <th>No.</th>
-            <th>Siswa</th>
-            <th>Guru</th>
-            <th>Industri</th>
-            <th>Mulai</th>
-            <th>Selesai</th>
+            <th class="text-center align-middle">No.</th>
+            <th class="text-center align-middle">Siswa</th>
+            <th class="text-center align-middle">Guru</th>
+            <th class="text-center align-middle">Industri</th>
+            <th class="text-center align-middle">Mulai</th>
+            <th class="text-center align-middle">Selesai</th>
         </tr>
     </thead>
     <tbody>
