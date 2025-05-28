@@ -7,7 +7,13 @@
 
     <div class="py-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="p-4 flex justify-end">
+            <div class="p-4 flex justify-between">
+                <form action="{{ route('industri.index') }}" method="GET" class="flex space-x-2">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama industri..."
+                        class="rounded-lg border-gray-300 shadow-sm text-sm px-4 py-2 dark:bg-gray-700 dark:text-white" />
+                    <button type="submit"
+                        class=" bg-blue-600 text-white font-medium rounded-lg text-base px-5 py-2.5 hover:bg-blue-700">Cari</button>
+                </form>
                 <a href="{{ route('industri.create') }}" 
                     class="inline-block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                     Tambah List Industri

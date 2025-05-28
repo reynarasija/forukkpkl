@@ -11,6 +11,18 @@ class IndustriController extends Controller
      */
     public function index()
     {
+        $query = Industri::with(['industri']);
+
+        if ($request->has('search') && $request->search != '') {
+            $query->whereHas('industri', function ($q) use ($request) {
+                $q->where('nama', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        $pkls = $query->latest()->paginate(5);
+
+        return view('pkl.index', compact('pkls'));
+
         $industris = Industri::latest()->get();
         return view('industri.index', compact('industris'));
     }
